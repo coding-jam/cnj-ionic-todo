@@ -4,11 +4,15 @@ angular.module('todo').service('ToDoRepository',[function(){
 	this.data = [
 		{
 			id:0,
-			name:'Fare la spesa'
+			text:'Fare la spesa',
+			info:'Mi raccomando il latte',
+			done:false
 		},
 		{
 			id:1,
-			name:'Stendere il bucato'
+			text:'Stendere il bucato',
+			info:'Solo se c\'è il sole',
+			done:false
 		}
 	];
 

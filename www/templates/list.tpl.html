@@ -1,5 +1,16 @@
+<ion-header-bar class="bar-stable" align-title="center">
+    <h1 class="title">ToDo List</h1>
+</ion-header-bar>
 <ion-view view-title="List">
     <ion-content>
-      	{{test}}
+        <ion-item 
+        	class="item-button-right" 
+        	collection-repeat="todo in todos">
+            {{todo.text}}
+            <button class="button icon ion-checkmark-round"></button>
+        </ion-item>
     </ion-content>
-  </ion-view>
+</ion-view>
+<ion-footer-bar class="bar-positive" align-title="center">
+    <h1 class="title">Aggiungi</h1>
+</ion-footer-bar>
