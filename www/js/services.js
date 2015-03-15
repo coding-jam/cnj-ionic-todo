@@ -18,7 +18,7 @@ angular.module('todo').service('ToDoRepository',[function(){
 
 	return{
 		list:function(){
-			return Object.freeze(that.data);
+			return that.data;
 		},
 		get:function(id){
 			return _.find(that.data,function(todo){

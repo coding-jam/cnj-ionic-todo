@@ -4,10 +4,10 @@
 <ion-view view-title="List">
     <ion-content>
         <ion-item 
+        	ng-click="showConfirm(todo)"
         	class="item-button-right" 
-        	collection-repeat="todo in todos">
+        	collection-repeat="todo in todos | filter:{done:false}">
             {{todo.text}}
-            <button class="button icon ion-checkmark-round"></button>
         </ion-item>
     </ion-content>
 </ion-view>
