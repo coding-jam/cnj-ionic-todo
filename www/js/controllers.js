@@ -3,7 +3,7 @@ angular.module('todo').controller('List', [
 	'ToDoRepository',
 	'$ionicPopup',
 	function($scope, ToDoRepository, $ionicPopup) {
-		$scope.todos = ToDoRepository.list();
+		$scope.todos = ToDoRepository;
 
 		$scope.showConfirm = function(todo) {
 			var confirmPopup = $ionicPopup.confirm({
@@ -16,6 +16,24 @@ angular.module('todo').controller('List', [
 			confirmPopup.then(function(result) {
 				todo.done = result;
 			});
+		};
+	}
+])
+.controller('Detail', [
+	'$scope',
+	'ToDoRepository',
+	'$state',
+	function($scope,ToDoRepository,$state) {
+
+		$scope.todo = {
+			text:'',
+			info:'',
+			done:false
+		};
+
+		$scope.save = function(){
+			ToDoRepository.push($scope.todo);
+			$state.go('list');
 		};
 	}
 ]);

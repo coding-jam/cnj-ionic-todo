@@ -5,6 +5,10 @@ angular.module('todo', ['ionic'])
       url: "/list",
       controller: 'List',
       templateUrl: "templates/list.tpl.html"
+    }).state('detail', {
+      url: "/detail",
+      controller: 'Detail',
+      templateUrl: "templates/detail.tpl.html"
     });
   })
   .run(function($ionicPlatform) {
