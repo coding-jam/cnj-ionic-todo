@@ -3,18 +3,24 @@ angular.module('todo').controller('List', [
 	'ToDoRepository',
 	'$ionicPopup',
 	function($scope, ToDoRepository, $ionicPopup) {
-		$scope.todos = ToDoRepository;
+		$scope.todos = [];
 
-		$scope.showConfirm = function(todo) {
+		$scope.$on('$ionicView.enter',function(){
+			$scope.todos = ToDoRepository.list();
+		});
+
+		$scope.showConfirm = function(index,todo) {
 			var confirmPopup = $ionicPopup.confirm({
 				cancelText: 'Annulla',
-				okText: 'Ok',
+				okText: 'Fatto!',
 				title: todo.text,
 				template: todo.info
 			});
 
 			confirmPopup.then(function(result) {
-				todo.done = result;
+				ToDoRepository.remove(index);
+				//Refresh
+				$scope.todos = ToDoRepository.list();
 			});
 		};
 	}
@@ -27,12 +33,11 @@ angular.module('todo').controller('List', [
 
 		$scope.todo = {
 			text:'',
-			info:'',
-			done:false
+			info:''
 		};
 
 		$scope.save = function(){
-			ToDoRepository.push($scope.todo);
+			ToDoRepository.store($scope.todo);
 			$state.go('list');
 		};
 	}

@@ -10,10 +10,4 @@ angular.module('todo', ['ionic'])
       controller: 'Detail',
       templateUrl: "templates/detail.tpl.html"
     });
-  })
-  .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-
-
-    });
-  })
+  });
