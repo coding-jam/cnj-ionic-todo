@@ -39,7 +39,8 @@ gulp.task('install', ['git-check'], function() {
 
 gulp.task('wiredep',function(){
   return wiredep({
-      src:'www/index.html'
+      src:'www/index.html',
+      exclude:'lib/angular/angular.js'
   });
 });
 
