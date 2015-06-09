@@ -18,9 +18,11 @@ angular.module('todo').controller('List', [
 			});
 
 			confirmPopup.then(function(result) {
-				ToDoRepository.remove(index);
-				//Refresh
-				$scope.todos = ToDoRepository.list();
+				if(result){
+					ToDoRepository.remove(index);
+					//Refresh
+					$scope.todos = ToDoRepository.list();	
+				}
 			});
 		};
 	}
