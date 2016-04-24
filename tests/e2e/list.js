@@ -1,3 +1,5 @@
+var ListPage = require("../../tests/e2e/pageObjects/List.js"); 
+
 describe('list', function() {
     it('should start on list page', function() {
   		browser.getCurrentUrl().then(function(actualUrl) {
@@ -6,15 +8,12 @@ describe('list', function() {
   	});
 
     it('should have a "New Todo" anchor', function() {
-        var newTodo = element(by.css('a[ui-sref="detail"]'));
-
-        browser.isElementPresent(newTodo).then(function(result) {
+        browser.isElementPresent(ListPage.newTodo).then(function(result) {
           expect(result).toEqual(true);
         });
   	});
 
     it('should start with a placeholder ion-item', function() {
-        var list = element.all(by.css('ion-item'));
-        expect(list.count()).toBe(1);
+        expect(ListPage.list.count()).toBe(1);
   	});
 });
