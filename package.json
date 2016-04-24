@@ -2,10 +2,10 @@
   "name": "ionic-todo",
   "version": "1.0.0",
   "description": "ionic-todo: An Ionic project",
-  "scripts":{
-      "postinstall": "./node_modules/bower/bin/bower install",
-      "prestart": "npm install",
-      "start": "./node_modules/ionic/bin/ionic serve --lab"
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "prestart": "npm install",
+    "start": "./node_modules/ionic/bin/ionic serve --lab"
   },
   "dependencies": {
     "gulp": "3.5.6",
