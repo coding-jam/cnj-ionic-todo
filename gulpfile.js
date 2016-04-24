@@ -58,6 +58,6 @@ gulp.task('git-check', function(done) {
 });
 
 gulp.task('e2e', function() {
-    sh.exec('ionic build ios');
+    sh.exec('./node_modules/ionic/bin/ionic build ios');
     sh.exec('./node_modules/protractor/bin/protractor tests/protractor.js');
 });
