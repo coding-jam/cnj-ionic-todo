@@ -4,12 +4,13 @@
 <ion-view view-title="List">
     <ion-content>
         <ion-item
+            ng-if="todos.length"
         	ng-click="showConfirm($index,todo)"
         	class="item-button-right"
         	collection-repeat="todo in todos">
             {{todo.text}}
         </ion-item>
-        <ion-item ng-hide="todos.length">
+        <ion-item ng-if="!todos.length">
             <strong>Evviva, non hai nulla da fare!</strong>
             <br/>
             <small>Clicca su aggiungi per inserire dei ToDo</small>
