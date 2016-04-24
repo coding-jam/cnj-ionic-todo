@@ -56,3 +56,8 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+gulp.task('e2e', function() {
+    sh.exec('ionic build ios');
+    sh.exec('./node_modules/protractor/bin/protractor tests/protractor.js');
+});
