@@ -1,6 +1,6 @@
 describe('list', function() {
     it('should start on list page', function() {
-  		return browser.getCurrentUrl().then(function(actualUrl) {
+  		browser.getCurrentUrl().then(function(actualUrl) {
   			expect(actualUrl.substring(actualUrl.lastIndexOf('#') + 1)).toBe('/list');
   		});
   	});
@@ -8,7 +8,7 @@ describe('list', function() {
     it('should have a "New Todo" anchor', function() {
         var newTodo = element(by.css('a[ui-sref="detail"]'));
 
-        return browser.isElementPresent(newTodo).then(function(result) {
+        browser.isElementPresent(newTodo).then(function(result) {
           expect(result).toEqual(true);
         });
   	});
